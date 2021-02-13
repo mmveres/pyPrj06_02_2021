@@ -1,0 +1,5 @@
+name = input("enter name")
+phoneWork = input("enter phone")
+print("name=", name, "phone=", phoneWork)
+print("name=" + name + ", " + "phone=" + phoneWork)
+print(f"name={name}, phone={phoneWork}")
