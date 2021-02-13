@@ -1,21 +1,27 @@
-def print_10_positive():
-    i = 0
-    while i < 10:
-        value = int(input("enter positive value"))
-        if value >= 0:
-            i += 1
-            print("count=", i, "value =", value)
-        else:
-            print("not positive")
+import tasks_cycle, constant
 
-def pow(x,n):
-    value = 1
-    for i in range(n):
-        value *= x
-    return value
+constant.PI = 8
 
-x = int(input("enter value x"))
-n = int(input("power n"))
-print("x =", x, " in power",n, "=", pow(x,n) )
+while True:
+    print("------------MENU----------")
+    print("1. print 10 positive value")
+    print("2. calc power from console")
+    print("3. calc power")
+    print("0. Exit")
+    print("--------------------------")
+    answer = int(input("enter choice"))
+    if answer == 0:
+        break;
+    elif answer == 1:
+        tasks_cycle.print_10_positive()
+    elif answer == 2:
+        tasks_cycle.calc_power_value_from_console()
+    elif answer == 3:
+        print(tasks_cycle.pow(3,2))
+    else:
+        print("Wrong choice, try again.")
+
+
+
 
 
