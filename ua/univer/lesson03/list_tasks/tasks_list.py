@@ -49,3 +49,35 @@ def get_even_odd_list_from_console():
         else:
             list_odd.append(value)
     return list_even, list_odd
+
+def get_sum(list_elem):
+    sum =0
+    for x in list_elem:
+        sum+=x
+    return sum
+
+def get_average(list_elem):
+    return get_sum(list_elem)/len(list_elem)
+
+def changev1_min_max_in_list(list_elem):
+    mymin =min(list_elem)
+    mymax =max(list_elem)
+    index_min = list_elem.index(mymin)
+    index_max = list_elem.index(mymax)
+    list_elem[index_min] = mymax
+    list_elem[index_max] =mymin
+    print(list_elem)
+
+def change_min_max_in_list(list_elem):
+    mymin =min(list_elem)
+    mymax =max(list_elem)
+    for i in range(len(list_elem)):
+        if list_elem[i] == mymax:
+            list_elem[i]=mymin
+        elif list_elem[i] == mymin:
+            list_elem[i]=mymax
+    print(list_elem)
+
+if __name__ == '__main__':
+    mas =[1,1,5,4,5]
+    change_min_max_in_list(mas)
