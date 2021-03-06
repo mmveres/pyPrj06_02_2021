@@ -39,4 +39,4 @@ if __name__ == '__main__':
     with open("data.json", "r") as file:
         json_str = file.read()
     json_dict = json.loads(json_str)
-    print(json_dict)
+    print(json_dict["name"])
