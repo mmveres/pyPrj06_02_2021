@@ -31,3 +31,6 @@ class Product:
 
     def __str__(self):
         return f"{self.name}, {self.weight}, {self.price}"
+
+    def __repr__(self):
+        return f"Product ({self.name}, {self.weight}, {self.price})"

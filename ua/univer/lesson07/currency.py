@@ -3,4 +3,4 @@ class Currency:
     eur = 35.00
 
     def get_currency(self):
-        return
+        return Currency.usd

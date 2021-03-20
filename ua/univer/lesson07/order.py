@@ -1,6 +1,8 @@
 class Order:
-    def __init__(self):
+    def __init__(self, client_account):
+        self.client_account = client_account
         self.__product_list = []
+        self.client_account.order_list.append(self)
 
     def add(self, product):
         self.__product_list.append(product)
@@ -19,6 +21,21 @@ class Order:
                 max_price_product = product
         return max_price_product
 
+    def get_total_price(self):
+        sum_price =0
+        for product in self.__product_list:
+            sum_price += product.price
+        return sum_price
+
+    def get_total_price_with_discount(self):
+        return self.get_total_price()*(1-self.client_account.discount/100)
+
     def print(self):
         for product in self.__product_list:
             print(product)
+
+    def __str__(self):
+        return str(self.__product_list)
+
+    def __repr__(self):
+        return repr(self.__product_list)
