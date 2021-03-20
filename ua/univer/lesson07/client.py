@@ -1,7 +1,8 @@
 class ClientAccount:
-    def __init__(self, name, account):
+    def __init__(self, name, account, bank_account):
         self.name = name
         self.account = account
+        self.bank_account = bank_account
         self.order_list = []
 
     def sum_price_order(self):

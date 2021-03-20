@@ -2,7 +2,7 @@ class Order:
     def __init__(self, client_account):
         self.client_account = client_account
         self.__product_list = []
-        self.client_account.order_list.append(self)
+
 
     def add(self, product):
         self.__product_list.append(product)
@@ -33,6 +33,12 @@ class Order:
     def print(self):
         for product in self.__product_list:
             print(product)
+
+    def complite(self):
+        self.print()
+        if self.client_account.bank_account > self.get_total_price_with_discount():
+            self.client_account.bank_account - self.get_total_price_with_discount()
+            self.client_account.order_list.append(self)
 
     def __str__(self):
         return str(self.__product_list)
