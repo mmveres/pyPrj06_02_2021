@@ -14,6 +14,7 @@ from abc import ABC
 
 from ua.univer.lesson08.coordinate import Point
 from ua.univer.lesson08.passenger import Passenger
+from ua.univer.lesson08.vehicle_ables import SwimAble
 
 
 class Vehicle(metaclass=abc.ABCMeta):
@@ -31,7 +32,7 @@ class Vehicle(metaclass=abc.ABCMeta):
         pass
 
 
-class Plane(Vehicle):
+class Plane(Vehicle,metaclass=abc.ABCMeta):
     def __init__(self, point, price, speed, year, height):
         super().__init__(point, price, speed, year)
         self.height = height
@@ -41,6 +42,9 @@ class Plane(Vehicle):
 
     def __repr__(self) -> str:
         return f"\nPlane: {self.__str__()}"
+
+    def fly(self):
+        return self.speed
 
     def show_image(self):
         print("Plane")
@@ -70,7 +74,7 @@ class PlaneCargo(Plane):
     def show_image(self):
         print("PlaneCargo")
 
-class Ship(Vehicle,Passenger):
+class Ship(Vehicle,Passenger, SwimAble):
     def __init__(self, point, price, speed, year, port, count_pass):
         Vehicle.__init__(self,point, price, speed, year)
         Passenger.__init__(self,count_pass)
@@ -85,6 +89,9 @@ class Ship(Vehicle,Passenger):
     def show_image(self):
         print("Ship")
 
+    def swim(self):
+        return self.speed
+
 
 class Car(Vehicle):
     def __init__(self, point, price, speed, year):
@@ -96,6 +103,14 @@ class Car(Vehicle):
     def show_image(self):
         print("Car")
 
+    def move(self):
+        return self.speed
 
+class Amfibian(Car, SwimAble):
 
+    def __init__(self, point, price, speed, year):
+        super().__init__(point, price, speed, year)
+
+    def swim(self):
+        return self.speed/2
 
