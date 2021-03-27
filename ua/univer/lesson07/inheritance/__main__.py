@@ -8,7 +8,7 @@ if __name__ == '__main__':
     doc1 = Doctor("Haus",50,6)
     fight1 = Fighter("BrusLi",30,100,75)
 
-    human_list = [stud1, doc1, fight1, Doctor("Aybolit",60,7)]
+    human_list = [stud1, doc1, fight1, Doctor("Aybolit",60,7),Human("Anonim",0)]
     for human in human_list:
         print(human)
 
